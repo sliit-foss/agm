@@ -1,81 +1,644 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+
 ---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>SLIIT FOSS - AGM</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+    <link href="/img/favicon.ico" type="image/svg+xml" rel="icon" />
+    <link href="/img/favicon.ico" type="image/svg+xml" rel="apple-touch-icon" />
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
+      rel="stylesheet"
+    />
+
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="/lib/venobox/venobox.css" rel="stylesheet" />
+    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <link href="/css/style.css" rel="stylesheet" />
+
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="container">
+        <div id="logo" class="pull-left">
+          <a href="#intro" class="scrollto"
+            ><img src="/img/logo-light.webp" alt="" title=""
+          /></a>
+        </div>
+      </div>
+    </header>
+
+    <section id="intro">
+      <div class="intro-container wow fadeIn">
+        <h1 class="mb-4 pb-0">
+          The Annual <span>General</span> Meeting <br />
+          <span class="agm-heading">2022/2023</span> <br/>
+          SLIIT <span>FOSS</span>
+        </h1>
+        <p class="mb-4 pb-0">25th Feb 2022, Live on YouTube</p>
+        <p class="mb-4 pb-0">
+          <span style="color: #bf78e6">#sliitfossagm</span> #25022022
+        </p>
+        <a
+          href="https://www.youtube.com/embed/upkXDVJgedU"
+          class="venobox play-btn mb-4"
+          data-vbtype="video"
+          data-autoplay="true"
+        ></a>
+        <a href="#youtube" class="about-btn scrollto">Watch Live Stream</a>
+      </div>
+    </section>
+
+    <main id="main">
+      <section id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 text-center">
+              <h2>About The Event</h2>
+              <p>
+                The Annual General Meeting of the SLIIT FOSS community is an
+                annual event created to review an year of hard work and to pass on
+                the torch of leadership to newer members of the community.
+              </p>
+            </div>
+            <div class="col-lg-3 text-center">
+              <h3>Where</h3>
+              <p>Live on SLIIT FOSS Youtube</p>
+            </div>
+            <div class="col-lg-3 text-center">
+              <h3>When</h3>
+              <p>25th Feb 2022</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="schedule" class="section-with-bg">
+        <div class="section-header">
+          <h2>Agenda</h2>
+          <p>Here is our agenda for the event</p>
+        </div>
+
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="container wow fadeInUp">
+                <div class="tab-content row justify-content-center">
+                  <!-- Schdule Day 1 -->
+                  <div
+                    role="tabpanel"
+                    class="col-lg-12 tab-pane fade show active"
+                    id="day-1"
+                  >
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>07:00 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/20.jpeg" alt="Cole Emmerich" />
+                        </div>
+                        <h4>Welcome Speech</h4>
+                        <p>Welcome speech by a member of the SLIIT FOSS Community.</p>
+                      </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>07:05 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/kaveesha.webp" alt="Cole Emmerich" />
+                        </div>
+                        <h4>Experience Sharing</h4>
+                        <p>
+                          Experience sharing by Kaveesha Gimhana.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>07:20 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/40.jpeg" alt="Cole Emmerich" />
+                        </div>
+                        <h4>2021/22 Resolution</h4>
+                        <p>
+                          Presenting the resolution by Chamod Shehanka and appointing the President for year 2022/23.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>07.30 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/50.jpg" alt="Cole Emmerich" />
+                        </div>
+                        <h4>Speech by Mr. Jagath Wickramarathne</h4>
+                        <p>
+                          Speech by the lecturer in charge, Mr. Jagath
+                          Wickramarathne.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>07.40 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/80.jpg" alt="Cole Emmerich" />
+                        </div>
+                        <h4>Speech by Mr. Amila Senarathne</h4>
+                        <p>
+                          Speech by the lecturer in charge, Mr. Amila Senarathne.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>07.50 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/70.jpg" alt="Cole Emmerich" />
+                        </div>
+                        <h4>Speech by Dr. Nuwan Kodagoda</h4>
+                        <p>
+                          Speech by the lecturer in charge, Dr. Nuwan Kodagoda.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>08:00 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/1603524420576.jpg" alt="Cole Emmerich" />
+                        </div>
+                        <h4>Speech by the President of FCSC</h4>
+                        <p>
+                          Speech by the President of FCSC 2022/23, Ranul
+                          Deelaka.
+                        </p>
+                      </div>
+                    </div>
+
+                    <div class="row schedule-item">
+                      <div class="col-md-2">
+                        <time>08:10 PM</time>
+                      </div>
+                      <div class="col-md-10">
+                        <div class="speaker">
+                          <img src="/img/speakers/6.jpg" alt="Cole Emmerich" />
+                        </div>
+                        <h4>Vote of Thanks</h4>
+                        <p>Vote of thanks by the newly appointed president.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12" style="text-align: center">
+              <br />
+              <br />
+              <img
+                width="300"
+                height="300"
+                src="/img/meet.png"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="wow fadeInUp"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="youtube">
+        <br />
+        <br />
+        <div class="section-header">
+          <h2 class="agm-heading">Annual General Meeting 22/23</h2>
+          <p>Live Stream of the SLIIT FOSS Annual General Meeting</p>
+        </div>
+        <div class="col-12 youtube" style="text-align: center">
+          <iframe
+            src="https://www.youtube.com/embed/ArlDKkf1juY"
+            title="YouTube video player"
+            frameborder="5"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="gallery" class="wow fadeInUp py-3 mt-5" style="padding: 0px; margin: 0px;">
+        <div class="container">
+          <div class="section-header">
+            <h2>SLIIT FOSS Arsenal Updates</h2>
+            <p>Check out our most recent additions to the community </p>
+          </div>
+        </div>
+
+        <div class="owl-carousel gallery-carousel card shadow p-4" style="margin-right: 20vw !important;">
+          <a
+            href="https://www.twitch.tv/videos/1271152341?collection=nUGP9zhbzBam4w"
+            target="_blank"
+            ><img src="/img/2022/Python 101 epi1.jpg" alt=""
+          /></a>
+          <a
+            href="https://www.twitch.tv/videos/1271146457?collection=vKcv9etazBZWfQ"
+            target="_blank"
+            ><img src="/img/2022/_H.Now_EP2.png" alt=""
+          /></a>
+          <a
+            href="https://www.twitch.tv/videos/1275381541"
+            target="_blank"
+            ><img src="/img/2022/Fly with Vue Bird-Episode 1-Happening Now -Madhusha Prasad.png" alt=""
+          /></a>
+          <a
+            href="https://www.twitch.tv/videos/1271176972?collection=KneHNolczBZffQ"
+            target="_blank"
+            ><img src="/img/2022/First Flight EP01_Now.jpg" alt=""
+          /></a>
+          <a
+            href="https://www.twitch.tv/videos/1272333003?collection=Q2M8IHanzBb_Bw"
+            target="_blank"
+            ><img src="/img/2022/H.Now_Session.png" alt=""
+          /></a>
+          <a
+            href="https://www.twitch.tv/videos/1298789598"
+            target="_blank"
+            ><img src="/img/2022/nodeJS-HN.jpg" alt=""
+          /></a>
+          <a
+            href="https://www.youtube.com/watch?v=ObaWNEzx9Mg"
+            target="_blank"
+            ><img src="/img/2022/Get up to Scratch with GraphQL - happening now.jpeg" alt=""
+          /></a>
+          <a
+            href="https://sliit-foss.github.io/zero2hero/"
+            target="_blank"
+            ><img src="/img/2022/Resources-01-01-01.png" alt=""
+          /></a>
+          <a
+            href="https://medium.com/sliit-foss"
+            target="_blank"
+            ><img src="/img/2022/a61234f5-fd0b-4b48-9040-fee93ccce795.jpg" alt=""
+          /></a>
+        </div>
+      </section>
+
+      <section id="gallery" class="wow fadeInUp">
+        <div class="container">
+          <div class="section-header">
+            <h2>Gallery</h2>
+            <p>Check out our gallery of past events</p>
+          </div>
+        </div>
+
+        <div class="owl-carousel gallery-carousel">
+          <a
+            href="/docs/img/gallery/1.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/1.jpg" alt=""
+          /></a>
+          <a
+            href="/docs/img/gallery/2.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/2.jpg" alt=""
+          /></a>
+          <a
+            href="/docs/img/gallery/3.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/3.jpg" alt=""
+          /></a>
+          <a
+            href="/docs/img/gallery/4.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/4.jpg" alt=""
+          /></a>
+          <a
+            href="/docs/img/gallery/5.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/5.jpg" alt=""
+          /></a>
+          <a
+            href="/docs/img/gallery/6.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/6.jpg" alt=""
+          /></a>
+          <a
+            href="/docs/img/gallery/7.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/7.jpg" alt=""
+          /></a>
+          <a
+            href="/docs/img/gallery/8.jpg"
+            class="venobox"
+            data-gall="gallery-carousel"
+            ><img src="/img/gallery/8.jpg" alt=""
+          /></a>
+        </div>
+      </section>
+
+      <section id="supporters" class="section-with-bg wow fadeInUp">
+        <div class="container">
+          <div class="section-header">
+            <h2>Collaborations</h2>
+          </div>
+
+          <div class="row no-gutters supporters-wrap clearfix">
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/devops.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/figma.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/gdg.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/git.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/kubsl.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/ng.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/go.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/postman.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-6">
+              <div class="supporter-logo">
+                <img src="/img/supporters/stackoverflow.png" class="img-fluid" alt="" />
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+          <div class="section-header">
+            <h2>Feedback</h2>
+            <p>Your feedback helps us grow and become better.</p>
+          </div>
+
+          <!-- <div class="row contact-info">
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>SLIIT Malabe</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+94775633985">+94 77 56339 85</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:info@example.com">infosliitfoss@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form id="feedback-form">
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <input
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    id="name"
+                    placeholder="Your Name"
+                    data-rule="minlen:4"
+                    data-msg="Please enter at least 4 chars"
+                  />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group col-md-6">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="Your Email"
+                    data-rule="email"
+                    data-msg="Please enter a valid email"
+                  />
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject"
+                  data-rule="minlen:4"
+                  data-msg="Please enter at least 8 chars of subject"
+                />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="5"
+                  data-rule="required"
+                  data-msg="Please write something for us"
+                  placeholder="Message"
+                ></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center">
+                <button type="submit">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row" s>
+            <div class="col-lg-4 col-md-4 col-sm-12 footer-info">
+              <img
+                src="/img/logo-light.webp"
+                class="foss-logo"
+                alt="TheEvenet"
+              />
+            </div>
+ 
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-md-4 footer-contact">
+              <p>
+                Welcome to the SLIIT FOSS community. We're a group of volunteers who
+                believe in the usage of Free/Open Source Software (FOSS)
+              </p>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 mt-md-4 footer-links">
+              <div class="social-links">
+                <a
+                  href="https://twitter.com/fosssliit?lang=en"
+                  class="twitter"
+                  target="_blank"
+                  ><i class="fa fa-twitter"></i
+                ></a>
+                <a
+                  href="https://www.facebook.com/sliitfoss"
+                  class="facebook"
+                  target="_blank"
+                  ><i class="fa fa-facebook"></i
+                ></a>
+                <a
+                  href="https://www.instagram.com/sliitfoss"
+                  class="instagram"
+                  target="_blank"
+                  ><i class="fa fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.youtube.com/channel/UCPPO-QR0Dv13ewjhPsc_I3w/featured"
+                  class="youtube"
+                  target="_blank"
+                  ><i class="fa fa-youtube"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong>SLIIT FOSS</strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by
+          <a href="https://sliitfoss.org" target="_blank">
+            SLIIT FOSS Community</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_WyMiG19mwb6vTGJwqJq5C");
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("feedback-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            emailjs.sendForm(
+              "service_664o6wc",
+              "template_1nhqybf",
+              this,
+              "user_WyMiG19mwb6vTGJwqJq5C"
+            );
+          });
+      };
+    </script>
+    <script is:inline src="/lib/jquery/jquery.min.js"></script>
+    <script is:inline src="/lib/jquery/jquery-migrate.min.js"></script>
+    <script is:inline src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script is:inline src="/lib/easing/easing.min.js"></script>
+    <script is:inline src="/lib/superfish/hoverIntent.js"></script>
+    <script is:inline src="/lib/superfish/superfish.min.js"></script>
+    <script is:inline src="/lib/wow/wow.min.js"></script>
+    <script is:inline src="/lib/venobox/venobox.min.js"></script>
+    <script is:inline src="/lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <script is:inline src="/contactform/contactform.js"></script>
+
+    <script is:inline src="/js/main.js"></script>
+  </body>
+</html>
