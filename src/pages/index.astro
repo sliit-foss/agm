@@ -1,11 +1,22 @@
 ---
-
+const title = "SLIIT FOSS - AGM";
+const gallery = () => {
+  const list = [];
+  for (let i = 1; i <= 8; i++) {
+    list.push({
+      src: `/img/gallery/${i}.jpg`,
+      title: `Gallery ${i}`,
+    });
+  }
+  return list;
+};
 ---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>SLIIT FOSS - AGM</title>
+    <title>{title}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -24,10 +35,12 @@
     <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/lib/animate/animate.min.css" rel="stylesheet" />
     <link href="/lib/venobox/venobox.css" rel="stylesheet" />
-    <link href="/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link
+      href="/lib/owlcarousel/assets/owl.carousel.min.css"
+      rel="stylesheet"
+    />
 
     <link href="/css/style.css" rel="stylesheet" />
-
   </head>
 
   <body>
@@ -35,8 +48,8 @@
       <div class="container">
         <div id="logo" class="pull-left">
           <a href="#intro" class="scrollto"
-            ><img src="/img/logo-light.webp" alt="" title=""
-          /></a>
+            ><img src="/img/logo-light.webp" alt="" title="" /></a
+          >
         </div>
       </div>
     </header>
@@ -45,7 +58,8 @@
       <div class="intro-container wow fadeIn">
         <h1 class="mb-4 pb-0">
           The Annual <span>General</span> Meeting <br />
-          <span class="agm-heading">2022/2023</span> <br/>
+          <span class="agm-heading">2022/2023</span>
+          <br />
           SLIIT <span>FOSS</span>
         </h1>
         <p class="mb-4 pb-0">25th Feb 2022, Live on YouTube</p>
@@ -56,8 +70,7 @@
           href="https://www.youtube.com/embed/upkXDVJgedU"
           class="venobox play-btn mb-4"
           data-vbtype="video"
-          data-autoplay="true"
-        ></a>
+          data-autoplay="true"></a>
         <a href="#youtube" class="about-btn scrollto">Watch Live Stream</a>
       </div>
     </section>
@@ -70,8 +83,8 @@
               <h2>About The Event</h2>
               <p>
                 The Annual General Meeting of the SLIIT FOSS community is an
-                annual event created to review an year of hard work and to pass on
-                the torch of leadership to newer members of the community.
+                annual event created to review an year of hard work and to pass
+                on the torch of leadership to newer members of the community.
               </p>
             </div>
             <div class="col-lg-3 text-center">
@@ -109,10 +122,16 @@
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
-                          <img src="/img/speakers/20.jpeg" alt="Cole Emmerich" />
+                          <img
+                            src="/img/speakers/20.jpeg"
+                            alt="Cole Emmerich"
+                          />
                         </div>
                         <h4>Welcome Speech</h4>
-                        <p>Welcome speech by a member of the SLIIT FOSS Community.</p>
+                        <p>
+                          Welcome speech by a member of the SLIIT FOSS
+                          Community.
+                        </p>
                       </div>
                     </div>
 
@@ -122,12 +141,13 @@
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
-                          <img src="/img/speakers/kaveesha.webp" alt="Cole Emmerich" />
+                          <img
+                            src="/img/speakers/kaveesha.webp"
+                            alt="Cole Emmerich"
+                          />
                         </div>
                         <h4>Experience Sharing</h4>
-                        <p>
-                          Experience sharing by Kaveesha Gimhana.
-                        </p>
+                        <p>Experience sharing by Kaveesha Gimhana.</p>
                       </div>
                     </div>
 
@@ -137,11 +157,15 @@
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
-                          <img src="/img/speakers/40.jpeg" alt="Cole Emmerich" />
+                          <img
+                            src="/img/speakers/40.jpeg"
+                            alt="Cole Emmerich"
+                          />
                         </div>
                         <h4>2021/22 Resolution</h4>
                         <p>
-                          Presenting the resolution by Chamod Shehanka and appointing the President for year 2022/23.
+                          Presenting the resolution by Chamod Shehanka and
+                          appointing the President for year 2022/23.
                         </p>
                       </div>
                     </div>
@@ -172,7 +196,8 @@
                         </div>
                         <h4>Speech by Mr. Amila Senarathne</h4>
                         <p>
-                          Speech by the lecturer in charge, Mr. Amila Senarathne.
+                          Speech by the lecturer in charge, Mr. Amila
+                          Senarathne.
                         </p>
                       </div>
                     </div>
@@ -198,7 +223,10 @@
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
-                          <img src="/img/speakers/1603524420576.jpg" alt="Cole Emmerich" />
+                          <img
+                            src="/img/speakers/1603524420576.jpg"
+                            alt="Cole Emmerich"
+                          />
                         </div>
                         <h4>Speech by the President of FCSC</h4>
                         <p>
@@ -254,65 +282,68 @@
             title="YouTube video player"
             frameborder="5"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+            allowfullscreen></iframe>
         </div>
       </section>
 
-      <section id="gallery" class="wow fadeInUp py-3 mt-5" style="padding: 0px; margin: 0px;">
+      <section
+        id="gallery"
+        class="wow fadeInUp py-3 mt-5"
+        style="padding: 0px; margin: 0px;"
+      >
         <div class="container">
           <div class="section-header">
             <h2>SLIIT FOSS Arsenal Updates</h2>
-            <p>Check out our most recent additions to the community </p>
+            <p>Check out our most recent additions to the community</p>
           </div>
         </div>
 
-        <div class="owl-carousel gallery-carousel card shadow p-4" style="margin-right: 20vw !important;">
+        <div
+          class="owl-carousel gallery-carousel card shadow p-4"
+          style="margin-right: 20vw !important;"
+        >
           <a
             href="https://www.twitch.tv/videos/1271152341?collection=nUGP9zhbzBam4w"
             target="_blank"
-            ><img src="/img/2022/Python 101 epi1.jpg" alt=""
-          /></a>
+            ><img src="/img/2022/Python 101 epi1.jpg" alt="" /></a
+          >
           <a
             href="https://www.twitch.tv/videos/1271146457?collection=vKcv9etazBZWfQ"
-            target="_blank"
-            ><img src="/img/2022/_H.Now_EP2.png" alt=""
-          /></a>
-          <a
-            href="https://www.twitch.tv/videos/1275381541"
-            target="_blank"
-            ><img src="/img/2022/Fly with Vue Bird-Episode 1-Happening Now -Madhusha Prasad.png" alt=""
-          /></a>
+            target="_blank"><img src="/img/2022/_H.Now_EP2.png" alt="" /></a
+          >
+          <a href="https://www.twitch.tv/videos/1275381541" target="_blank"
+            ><img
+              src="/img/2022/Fly with Vue Bird-Episode 1-Happening Now -Madhusha Prasad.png"
+              alt=""
+            /></a
+          >
           <a
             href="https://www.twitch.tv/videos/1271176972?collection=KneHNolczBZffQ"
             target="_blank"
-            ><img src="/img/2022/First Flight EP01_Now.jpg" alt=""
-          /></a>
+            ><img src="/img/2022/First Flight EP01_Now.jpg" alt="" /></a
+          >
           <a
             href="https://www.twitch.tv/videos/1272333003?collection=Q2M8IHanzBb_Bw"
-            target="_blank"
-            ><img src="/img/2022/H.Now_Session.png" alt=""
-          /></a>
-          <a
-            href="https://www.twitch.tv/videos/1298789598"
-            target="_blank"
-            ><img src="/img/2022/nodeJS-HN.jpg" alt=""
-          /></a>
-          <a
-            href="https://www.youtube.com/watch?v=ObaWNEzx9Mg"
-            target="_blank"
-            ><img src="/img/2022/Get up to Scratch with GraphQL - happening now.jpeg" alt=""
-          /></a>
-          <a
-            href="https://sliit-foss.github.io/zero2hero/"
-            target="_blank"
-            ><img src="/img/2022/Resources-01-01-01.png" alt=""
-          /></a>
-          <a
-            href="https://medium.com/sliit-foss"
-            target="_blank"
-            ><img src="/img/2022/a61234f5-fd0b-4b48-9040-fee93ccce795.jpg" alt=""
-          /></a>
+            target="_blank"><img src="/img/2022/H.Now_Session.png" alt="" /></a
+          >
+          <a href="https://www.twitch.tv/videos/1298789598" target="_blank"
+            ><img src="/img/2022/nodeJS-HN.jpg" alt="" /></a
+          >
+          <a href="https://www.youtube.com/watch?v=ObaWNEzx9Mg" target="_blank"
+            ><img
+              src="/img/2022/Get up to Scratch with GraphQL - happening now.jpeg"
+              alt=""
+            /></a
+          >
+          <a href="https://sliit-foss.github.io/zero2hero/" target="_blank"
+            ><img src="/img/2022/Resources-01-01-01.png" alt="" /></a
+          >
+          <a href="https://medium.com/sliit-foss" target="_blank"
+            ><img
+              src="/img/2022/a61234f5-fd0b-4b48-9040-fee93ccce795.jpg"
+              alt=""
+            /></a
+          >
         </div>
       </section>
 
@@ -325,54 +356,17 @@
         </div>
 
         <div class="owl-carousel gallery-carousel">
-          <a
-            href="/docs/img/gallery/1.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/1.jpg" alt=""
-          /></a>
-          <a
-            href="/docs/img/gallery/2.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/2.jpg" alt=""
-          /></a>
-          <a
-            href="/docs/img/gallery/3.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/3.jpg" alt=""
-          /></a>
-          <a
-            href="/docs/img/gallery/4.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/4.jpg" alt=""
-          /></a>
-          <a
-            href="/docs/img/gallery/5.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/5.jpg" alt=""
-          /></a>
-          <a
-            href="/docs/img/gallery/6.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/6.jpg" alt=""
-          /></a>
-          <a
-            href="/docs/img/gallery/7.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/7.jpg" alt=""
-          /></a>
-          <a
-            href="/docs/img/gallery/8.jpg"
-            class="venobox"
-            data-gall="gallery-carousel"
-            ><img src="/img/gallery/8.jpg" alt=""
-          /></a>
+          {
+            gallery().map((gallery) => (
+              <a
+                href={gallery.src}
+                class="venobox"
+                data-gall="gallery-carousel"
+              >
+                <img src={gallery.src} alt="" />
+              </a>
+            ))
+          }
         </div>
       </section>
 
@@ -385,7 +379,11 @@
           <div class="row no-gutters supporters-wrap clearfix">
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/devops.png" class="img-fluid" alt="" />
+                <img
+                  src="/img/supporters/devops.png"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
 
@@ -427,16 +425,23 @@
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/postman.png" class="img-fluid" alt="" />
+                <img
+                  src="/img/supporters/postman.png"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/stackoverflow.png" class="img-fluid" alt="" />
+                <img
+                  src="/img/supporters/stackoverflow.png"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
-
           </div>
         </div>
       </section>
@@ -525,8 +530,7 @@
                   rows="5"
                   data-rule="required"
                   data-msg="Please write something for us"
-                  placeholder="Message"
-                ></textarea>
+                  placeholder="Message"></textarea>
                 <div class="validation"></div>
               </div>
               <div class="text-center">
@@ -549,11 +553,11 @@
                 alt="TheEvenet"
               />
             </div>
- 
+
             <div class="col-lg-4 col-md-4 col-sm-12 mt-md-4 footer-contact">
               <p>
-                Welcome to the SLIIT FOSS community. We're a group of volunteers who
-                believe in the usage of Free/Open Source Software (FOSS)
+                Welcome to the SLIIT FOSS community. We're a group of volunteers
+                who believe in the usage of Free/Open Source Software (FOSS)
               </p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12 mt-md-4 footer-links">
@@ -561,27 +565,23 @@
                 <a
                   href="https://twitter.com/fosssliit?lang=en"
                   class="twitter"
-                  target="_blank"
-                  ><i class="fa fa-twitter"></i
-                ></a>
+                  target="_blank"><i class="fa fa-twitter"></i></a
+                >
                 <a
                   href="https://www.facebook.com/sliitfoss"
                   class="facebook"
-                  target="_blank"
-                  ><i class="fa fa-facebook"></i
-                ></a>
+                  target="_blank"><i class="fa fa-facebook"></i></a
+                >
                 <a
                   href="https://www.instagram.com/sliitfoss"
                   class="instagram"
-                  target="_blank"
-                  ><i class="fa fa-instagram"></i
-                ></a>
+                  target="_blank"><i class="fa fa-instagram"></i></a
+                >
                 <a
                   href="https://www.youtube.com/channel/UCPPO-QR0Dv13ewjhPsc_I3w/featured"
                   class="youtube"
-                  target="_blank"
-                  ><i class="fa fa-youtube"></i
-                ></a>
+                  target="_blank"><i class="fa fa-youtube"></i></a
+                >
               </div>
             </div>
           </div>
