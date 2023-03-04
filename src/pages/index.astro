@@ -1,5 +1,56 @@
 ---
 const title = "SLIIT FOSS - AGM";
+const AGMYear = "2023/2024";
+const AGMHashTag = "#09032023";
+const venue = "G1105";
+const date = "9th of March 2023"
+const agendaTime1 = "9:00 AM";
+const AGMAgendaTitle1 = "Welcome";
+const AGMAgendaDescription1 = "Welcome to the AGM 2023/2024";
+const agendaTime2 = "9:30 AM";
+const AGMAgendaTitle2 = "Introduction";
+const AGMAgendaDescription2 = "Introduction of the new committee members";
+const agendaTime3 = "10:00 AM";
+const AGMAgendaTitle3 = "Annual Report";
+const AGMAgendaDescription3 = "Annual report of the previous committee";
+const agendaTime4 = "10:30 AM";
+const AGMAgendaTitle4 = "Election";
+const AGMAgendaDescription4 = "Election of the new committee members";
+const agendaTime5 = "11:00 AM";
+const AGMAgendaTitle5 = "Closing";
+const AGMAgendaDescription5 = "Closing of the AGM 2023/2024";
+const agendaTime6 = "11:30 AM";
+const AGMAgendaTitle6 = "End";
+const AGMAgendaDescription6 = "End of the AGM 2023/2024";
+const agendaTime7 = "12:00 PM";
+const AGMAgendaTitle7 = "Lunch";
+const AGMAgendaDescription7 = "Lunch break";
+const agendaTime8 = "1:00 PM";
+const AGMAgendaTitle8 = "End";
+const AGMAgendaDescription8 = "End of the AGM 2023/2024";
+const eventLink = [
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+  'https://www.youtube.com/embed/upkXDVJgedU',
+]
+const event  = () => {
+  const list = [];
+  for (let i = 1; i <= 8; i++) {
+    console.log(eventLink[i]);
+    console.log(`/img/event/${i}.jpg`);
+    list.push({
+      href: eventLink[i],
+      src: `/img/event/${i}.jpg`,
+    });
+  }
+  return list;
+}
 const gallery = () => {
   const list = [];
   for (let i = 1; i <= 8; i++) {
@@ -58,13 +109,13 @@ const gallery = () => {
       <div class="intro-container wow fadeIn">
         <h1 class="mb-4 pb-0">
           The Annual <span>General</span> Meeting <br />
-          <span class="agm-heading">2022/2023</span>
+          <span class="agm-heading">{AGMYear}</span>
           <br />
           SLIIT <span>FOSS</span>
         </h1>
         <p class="mb-4 pb-0">25th Feb 2022, Live on YouTube</p>
         <p class="mb-4 pb-0">
-          <span style="color: #bf78e6">#sliitfossagm</span> #25022022
+          <span style="color: #bf78e6">#sliitfossagm</span> {AGMHashTag}
         </p>
         <a
           href="https://www.youtube.com/embed/upkXDVJgedU"
@@ -89,11 +140,11 @@ const gallery = () => {
             </div>
             <div class="col-lg-3 text-center">
               <h3>Where</h3>
-              <p>Live on SLIIT FOSS Youtube</p>
+              <p>{venue}</p>
             </div>
             <div class="col-lg-3 text-center">
               <h3>When</h3>
-              <p>25th Feb 2022</p>
+              <p>{date}</p>
             </div>
           </div>
         </div>
@@ -118,7 +169,7 @@ const gallery = () => {
                   >
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>07:00 PM</time>
+                        <time>{agendaTime1}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
@@ -127,17 +178,16 @@ const gallery = () => {
                             alt="Cole Emmerich"
                           />
                         </div>
-                        <h4>Welcome Speech</h4>
+                        <h4>{AGMAgendaTitle1}</h4>
                         <p>
-                          Welcome speech by a member of the SLIIT FOSS
-                          Community.
+                          {AGMAgendaDescription1}
                         </p>
                       </div>
                     </div>
 
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>07:05 PM</time>
+                        <time>{agendaTime2}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
@@ -146,14 +196,14 @@ const gallery = () => {
                             alt="Cole Emmerich"
                           />
                         </div>
-                        <h4>Experience Sharing</h4>
-                        <p>Experience sharing by Kaveesha Gimhana.</p>
+                        <h4>{AGMAgendaTitle2}</h4>
+                        <p>{AGMAgendaDescription2}</p>
                       </div>
                     </div>
 
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>07:20 PM</time>
+                        <time>{agendaTime3}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
@@ -162,64 +212,61 @@ const gallery = () => {
                             alt="Cole Emmerich"
                           />
                         </div>
-                        <h4>2021/22 Resolution</h4>
+                        <h4>{AGMAgendaTitle3}</h4>
                         <p>
-                          Presenting the resolution by Chamod Shehanka and
-                          appointing the President for year 2022/23.
+                          {AGMAgendaDescription3}
                         </p>
                       </div>
                     </div>
 
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>07.30 PM</time>
+                        <time>{agendaTime4}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
                           <img src="/img/speakers/50.jpg" alt="Cole Emmerich" />
                         </div>
-                        <h4>Speech by Mr. Jagath Wickramarathne</h4>
+                        <h4>{AGMAgendaTitle4}</h4>
                         <p>
-                          Speech by the lecturer in charge, Mr. Jagath
-                          Wickramarathne.
+                          {AGMAgendaDescription4}
                         </p>
                       </div>
                     </div>
 
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>07.40 PM</time>
+                        <time>{agendaTime5}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
                           <img src="/img/speakers/80.jpg" alt="Cole Emmerich" />
                         </div>
-                        <h4>Speech by Mr. Amila Senarathne</h4>
+                        <h4>{AGMAgendaTitle5}</h4>
                         <p>
-                          Speech by the lecturer in charge, Mr. Amila
-                          Senarathne.
+                          {AGMAgendaDescription5}
                         </p>
                       </div>
                     </div>
 
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>07.50 PM</time>
+                        <time>{agendaTime6}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
                           <img src="/img/speakers/70.jpg" alt="Cole Emmerich" />
                         </div>
-                        <h4>Speech by Dr. Nuwan Kodagoda</h4>
+                        <h4>{AGMAgendaTitle6}</h4>
                         <p>
-                          Speech by the lecturer in charge, Dr. Nuwan Kodagoda.
+                          {AGMAgendaDescription6}
                         </p>
                       </div>
                     </div>
 
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>08:00 PM</time>
+                        <time>{agendaTime7}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
@@ -228,24 +275,23 @@ const gallery = () => {
                             alt="Cole Emmerich"
                           />
                         </div>
-                        <h4>Speech by the President of FCSC</h4>
+                        <h4>{AGMAgendaTitle7}</h4>
                         <p>
-                          Speech by the President of FCSC 2022/23, Ranul
-                          Deelaka.
+                          {AGMAgendaDescription7}
                         </p>
                       </div>
                     </div>
 
                     <div class="row schedule-item">
                       <div class="col-md-2">
-                        <time>08:10 PM</time>
+                        <time>{agendaTime8}</time>
                       </div>
                       <div class="col-md-10">
                         <div class="speaker">
                           <img src="/img/speakers/6.jpg" alt="Cole Emmerich" />
                         </div>
-                        <h4>Vote of Thanks</h4>
-                        <p>Vote of thanks by the newly appointed president.</p>
+                        <h4>{AGMAgendaTitle8}</h4>
+                        <p>{AGMAgendaDescription8}</p>
                       </div>
                     </div>
                   </div>
@@ -276,14 +322,7 @@ const gallery = () => {
           <h2 class="agm-heading">Annual General Meeting 22/23</h2>
           <p>Live Stream of the SLIIT FOSS Annual General Meeting</p>
         </div>
-        <div class="col-12 youtube" style="text-align: center">
-          <iframe
-            src="https://www.youtube.com/embed/ArlDKkf1juY"
-            title="YouTube video player"
-            frameborder="5"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        </div>
+        
       </section>
 
       <section
@@ -302,48 +341,17 @@ const gallery = () => {
           class="owl-carousel gallery-carousel card shadow p-4"
           style="margin-right: 20vw !important;"
         >
-          <a
-            href="https://www.twitch.tv/videos/1271152341?collection=nUGP9zhbzBam4w"
+        {
+          event().map((event) => {
+            <a
+            href= {event.href}
             target="_blank"
-            ><img src="/img/2022/Python 101 epi1.jpg" alt="" /></a
-          >
-          <a
-            href="https://www.twitch.tv/videos/1271146457?collection=vKcv9etazBZWfQ"
-            target="_blank"><img src="/img/2022/_H.Now_EP2.png" alt="" /></a
-          >
-          <a href="https://www.twitch.tv/videos/1275381541" target="_blank"
-            ><img
-              src="/img/2022/Fly with Vue Bird-Episode 1-Happening Now -Madhusha Prasad.png"
-              alt=""
-            /></a
-          >
-          <a
-            href="https://www.twitch.tv/videos/1271176972?collection=KneHNolczBZffQ"
-            target="_blank"
-            ><img src="/img/2022/First Flight EP01_Now.jpg" alt="" /></a
-          >
-          <a
-            href="https://www.twitch.tv/videos/1272333003?collection=Q2M8IHanzBb_Bw"
-            target="_blank"><img src="/img/2022/H.Now_Session.png" alt="" /></a
-          >
-          <a href="https://www.twitch.tv/videos/1298789598" target="_blank"
-            ><img src="/img/2022/nodeJS-HN.jpg" alt="" /></a
-          >
-          <a href="https://www.youtube.com/watch?v=ObaWNEzx9Mg" target="_blank"
-            ><img
-              src="/img/2022/Get up to Scratch with GraphQL - happening now.jpeg"
-              alt=""
-            /></a
-          >
-          <a href="https://sliit-foss.github.io/zero2hero/" target="_blank"
-            ><img src="/img/2022/Resources-01-01-01.png" alt="" /></a
-          >
-          <a href="https://medium.com/sliit-foss" target="_blank"
-            ><img
-              src="/img/2022/a61234f5-fd0b-4b48-9040-fee93ccce795.jpg"
-              alt=""
-            /></a
-          >
+            ><img src={event.src} alt=""/>
+            </a>
+          })
+        }
+          
+          
         </div>
       </section>
 
@@ -545,7 +553,7 @@ const gallery = () => {
     <footer id="footer">
       <div class="footer-top">
         <div class="container">
-          <div class="row" s>
+          <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 footer-info">
               <img
                 src="/img/logo-light.webp"
