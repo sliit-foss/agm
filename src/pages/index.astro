@@ -1,73 +1,22 @@
 ---
-const title = "SLIIT FOSS - AGM";
-const AGMYear = "2023/2024";
-const AGMHashTag = "#09032023";
-const venue = "G1105";
-const date = "9th of March 2023"
-const agendaTime1 = "9:00 AM";
-const AGMAgendaTitle1 = "Welcome";
-const AGMAgendaDescription1 = "Welcome to the AGM 2023/2024";
-const agendaTime2 = "9:30 AM";
-const AGMAgendaTitle2 = "Introduction";
-const AGMAgendaDescription2 = "Introduction of the new committee members";
-const agendaTime3 = "10:00 AM";
-const AGMAgendaTitle3 = "Annual Report";
-const AGMAgendaDescription3 = "Annual report of the previous committee";
-const agendaTime4 = "10:30 AM";
-const AGMAgendaTitle4 = "Election";
-const AGMAgendaDescription4 = "Election of the new committee members";
-const agendaTime5 = "11:00 AM";
-const AGMAgendaTitle5 = "Closing";
-const AGMAgendaDescription5 = "Closing of the AGM 2023/2024";
-const agendaTime6 = "11:30 AM";
-const AGMAgendaTitle6 = "End";
-const AGMAgendaDescription6 = "End of the AGM 2023/2024";
-const agendaTime7 = "12:00 PM";
-const AGMAgendaTitle7 = "Lunch";
-const AGMAgendaDescription7 = "Lunch break";
-const agendaTime8 = "1:00 PM";
-const AGMAgendaTitle8 = "End";
-const AGMAgendaDescription8 = "End of the AGM 2023/2024";
-const eventLink = [
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-  'https://www.youtube.com/embed/upkXDVJgedU',
-]
-const event  = () => {
-  const list = [];
-  for (let i = 1; i <= 8; i++) {
-    console.log(eventLink[i]);
-    console.log(`/img/event/${i}.jpg`);
-    list.push({
-      href: eventLink[i],
-      src: `/img/event/${i}.jpg`,
-    });
+let currentYear = new Date().getFullYear();
+let data = null;
+while (true) {
+  try {
+    data = await import(`../data/${currentYear}.json`);
+    break;
+  } catch (e) {
+    currentYear--;
+    continue;
   }
-  return list;
 }
-const gallery = () => {
-  const list = [];
-  for (let i = 1; i <= 8; i++) {
-    list.push({
-      src: `/img/gallery/${i}.jpg`,
-      title: `Gallery ${i}`,
-    });
-  }
-  return list;
-};
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>{title}</title>
+    <title>SLIIT FOSS - AGM</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -90,7 +39,6 @@ const gallery = () => {
       href="/lib/owlcarousel/assets/owl.carousel.min.css"
       rel="stylesheet"
     />
-
     <link href="/css/style.css" rel="stylesheet" />
   </head>
 
@@ -99,7 +47,7 @@ const gallery = () => {
       <div class="container">
         <div id="logo" class="pull-left">
           <a href="#intro" class="scrollto"
-            ><img src="/img/logo-light.webp" alt="" title="" /></a
+            ><img src="/img/logo.webp" alt="" title="" /></a
           >
         </div>
       </div>
@@ -109,20 +57,27 @@ const gallery = () => {
       <div class="intro-container wow fadeIn">
         <h1 class="mb-4 pb-0">
           The Annual <span>General</span> Meeting <br />
-          <span class="agm-heading">{AGMYear}</span>
+          <span class="agm-heading">{data.year}</span>
           <br />
           SLIIT <span>FOSS</span>
         </h1>
-        <p class="mb-4 pb-0">25th Feb 2022, Live on YouTube</p>
+        <p class="mb-4 pb-0">{data.date}, On Campus</p>
         <p class="mb-4 pb-0">
-          <span style="color: #bf78e6">#sliitfossagm</span> {AGMHashTag}
+          <span style="color: #bf78e6">#sliitfossagm</span>
+          {data.hashTag}
         </p>
         <a
           href="https://www.youtube.com/embed/upkXDVJgedU"
           class="venobox play-btn mb-4"
           data-vbtype="video"
           data-autoplay="true"></a>
-        <a href="#youtube" class="about-btn scrollto">Watch Live Stream</a>
+        {
+          data.liveStream && (
+            <a href="#youtube" class="about-btn scrollto">
+              Watch Live Stream
+            </a>
+          )
+        }
       </div>
     </section>
 
@@ -140,11 +95,11 @@ const gallery = () => {
             </div>
             <div class="col-lg-3 text-center">
               <h3>Where</h3>
-              <p>{venue}</p>
+              <p>{data.venue}</p>
             </div>
             <div class="col-lg-3 text-center">
               <h3>When</h3>
-              <p>{date}</p>
+              <p>{data.date}</p>
             </div>
           </div>
         </div>
@@ -167,133 +122,24 @@ const gallery = () => {
                     class="col-lg-12 tab-pane fade show active"
                     id="day-1"
                   >
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime1}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img
-                            src="/img/speakers/20.jpeg"
-                            alt="Cole Emmerich"
-                          />
-                        </div>
-                        <h4>{AGMAgendaTitle1}</h4>
-                        <p>
-                          {AGMAgendaDescription1}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime2}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img
-                            src="/img/speakers/kaveesha.webp"
-                            alt="Cole Emmerich"
-                          />
-                        </div>
-                        <h4>{AGMAgendaTitle2}</h4>
-                        <p>{AGMAgendaDescription2}</p>
-                      </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime3}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img
-                            src="/img/speakers/40.jpeg"
-                            alt="Cole Emmerich"
-                          />
-                        </div>
-                        <h4>{AGMAgendaTitle3}</h4>
-                        <p>
-                          {AGMAgendaDescription3}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime4}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img src="/img/speakers/50.jpg" alt="Cole Emmerich" />
-                        </div>
-                        <h4>{AGMAgendaTitle4}</h4>
-                        <p>
-                          {AGMAgendaDescription4}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime5}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img src="/img/speakers/80.jpg" alt="Cole Emmerich" />
-                        </div>
-                        <h4>{AGMAgendaTitle5}</h4>
-                        <p>
-                          {AGMAgendaDescription5}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime6}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img src="/img/speakers/70.jpg" alt="Cole Emmerich" />
-                        </div>
-                        <h4>{AGMAgendaTitle6}</h4>
-                        <p>
-                          {AGMAgendaDescription6}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime7}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img
-                            src="/img/speakers/1603524420576.jpg"
-                            alt="Cole Emmerich"
-                          />
-                        </div>
-                        <h4>{AGMAgendaTitle7}</h4>
-                        <p>
-                          {AGMAgendaDescription7}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div class="row schedule-item">
-                      <div class="col-md-2">
-                        <time>{agendaTime8}</time>
-                      </div>
-                      <div class="col-md-10">
-                        <div class="speaker">
-                          <img src="/img/speakers/6.jpg" alt="Cole Emmerich" />
-                        </div>
-                        <h4>{AGMAgendaTitle8}</h4>
-                        <p>{AGMAgendaDescription8}</p>
-                      </div>
-                    </div>
+                    {
+                      data.agenda.map((agenda) => {
+                        return (
+                          <div class="row schedule-item">
+                            <div class="col-md-2">
+                              <time>{agenda.time}</time>
+                            </div>
+                            <div class="col-md-10">
+                              <div class="speaker">
+                                <img src={agenda.img} />
+                              </div>
+                              <h4>{agenda.title}</h4>
+                              <p>{agenda.description}</p>
+                            </div>
+                          </div>
+                        );
+                      })
+                    }
                   </div>
                 </div>
               </div>
@@ -305,24 +151,11 @@ const gallery = () => {
                 width="300"
                 height="300"
                 src="/img/meet.png"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
                 class="wow fadeInUp"
               />
             </div>
           </div>
         </div>
-      </section>
-
-      <section id="youtube">
-        <br />
-        <br />
-        <div class="section-header">
-          <h2 class="agm-heading">Annual General Meeting 22/23</h2>
-          <p>Live Stream of the SLIIT FOSS Annual General Meeting</p>
-        </div>
-        
       </section>
 
       <section
@@ -341,17 +174,16 @@ const gallery = () => {
           class="owl-carousel gallery-carousel card shadow p-4"
           style="margin-right: 20vw !important;"
         >
-        {
-          event().map((event) => {
-            <a
-            href= {event.href}
-            target="_blank"
-            ><img src={event.src} alt=""/>
-            </a>
-          })
-        }
-          
-          
+          {
+            Array.from({ length: data.arsenalImgCount }).map((_, i) => (
+              <a
+                href={`/img/${currentYear}/arsenal/${i + 1}.jpg`}
+                target="_blank"
+              >
+                <img src={`/img/${currentYear}/arsenal/${i + 1}.jpg`} alt="" />
+              </a>
+            ))
+          }
         </div>
       </section>
 
@@ -365,13 +197,13 @@ const gallery = () => {
 
         <div class="owl-carousel gallery-carousel">
           {
-            gallery().map((gallery) => (
+            Array.from({ length: data.eventImgCount }).map((_, i) => (
               <a
-                href={gallery.src}
+                href={`/img/${currentYear}/events/${i + 1}.jpg`}
                 class="venobox"
                 data-gall="gallery-carousel"
               >
-                <img src={gallery.src} alt="" />
+                <img src={`/img/${currentYear}/events/${i + 1}.jpg`} alt="" />
               </a>
             ))
           }
@@ -388,7 +220,7 @@ const gallery = () => {
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
                 <img
-                  src="/img/supporters/devops.png"
+                  src="/img/collaborators/devops.png"
                   class="img-fluid"
                   alt=""
                 />
@@ -397,44 +229,44 @@ const gallery = () => {
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/figma.png" class="img-fluid" alt="" />
+                <img src="/img/collaborators/figma.png" class="img-fluid" alt="" />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/gdg.png" class="img-fluid" alt="" />
+                <img src="/img/collaborators/gdg.png" class="img-fluid" alt="" />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/git.png" class="img-fluid" alt="" />
+                <img src="/img/collaborators/git.png" class="img-fluid" alt="" />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/kubsl.png" class="img-fluid" alt="" />
+                <img src="/img/collaborators/kubsl.png" class="img-fluid" alt="" />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/ng.png" class="img-fluid" alt="" />
+                <img src="/img/collaborators/ng.png" class="img-fluid" alt="" />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/supporters/go.png" class="img-fluid" alt="" />
+                <img src="/img/collaborators/go.png" class="img-fluid" alt="" />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
                 <img
-                  src="/img/supporters/postman.png"
+                  src="/img/collaborators/postman.png"
                   class="img-fluid"
                   alt=""
                 />
@@ -444,7 +276,7 @@ const gallery = () => {
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
                 <img
-                  src="/img/supporters/stackoverflow.png"
+                  src="/img/collaborators/stackoverflow.png"
                   class="img-fluid"
                   alt=""
                 />
@@ -460,34 +292,6 @@ const gallery = () => {
             <h2>Feedback</h2>
             <p>Your feedback helps us grow and become better.</p>
           </div>
-
-          <!-- <div class="row contact-info">
-          <div class="col-md-4">
-            <div class="contact-address">
-              <i class="ion-ios-location-outline"></i>
-              <h3>Address</h3>
-              <address>SLIIT Malabe</address>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-phone">
-              <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+94775633985">+94 77 56339 85</a></p>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="contact-email">
-              <i class="ion-ios-email-outline"></i>
-              <h3>Email</h3>
-              <p>
-                <a href="mailto:info@example.com">infosliitfoss@gmail.com</a>
-              </p>
-            </div>
-          </div>
-        </div> -->
 
           <div class="form">
             <div id="sendmessage">Your message has been sent. Thank you!</div>
@@ -556,7 +360,7 @@ const gallery = () => {
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 footer-info">
               <img
-                src="/img/logo-light.webp"
+                src="/img/logo.webp"
                 class="foss-logo"
                 alt="TheEvenet"
               />
@@ -644,9 +448,7 @@ const gallery = () => {
     <script is:inline src="/lib/wow/wow.min.js"></script>
     <script is:inline src="/lib/venobox/venobox.min.js"></script>
     <script is:inline src="/lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <script is:inline src="/contactform/contactform.js"></script>
-
     <script is:inline src="/js/main.js"></script>
+    <script is:inline src="/js/contact.js"></script>
   </body>
 </html>
