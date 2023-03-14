@@ -1,7 +1,7 @@
 {
   "year": "2023/2024",
   "hashTag": "#16032023",
-  "venue": "On Campus, Lecture Hall G1105",
+  "venue": "On Campus, Lecture Hall F301",
   "date": "16th March 2023",
   "agenda": [
     {
@@ -49,5 +49,6 @@
   ],
   "eventImgCount": 8,
   "arsenalImgCount": 12,
-  "liveStream": ""
+  "liveStream": "",
+  "recap": ""
 }

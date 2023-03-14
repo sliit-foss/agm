@@ -66,11 +66,16 @@ while (true) {
           <span style="color: #bf78e6">#sliitfossagm</span>
           {data.hashTag}
         </p>
-        <a
-          href="https://www.youtube.com/embed/upkXDVJgedU"
-          class="venobox play-btn mb-4"
-          data-vbtype="video"
-          data-autoplay="true"></a>
+        {
+          data.recap && (
+            <a
+              href={data.recap}
+              class="venobox play-btn mb-4"
+              data-vbtype="video"
+              data-autoplay="true"
+            />
+          )
+        }
         {
           data.liveStream && (
             <a href="#youtube" class="about-btn scrollto">
@@ -141,7 +146,9 @@ while (true) {
                       })
                     }
                   </div>
-                  <p class="mt-3 fs-6 text-black-50">Agenda is subject to changed*</p>
+                  <p class="mt-3 fs-6 text-black-50">
+                    Agenda is subject to change*
+                  </p>
                 </div>
               </div>
             </div>
@@ -230,25 +237,41 @@ while (true) {
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/collaborators/figma.png" class="img-fluid" alt="" />
+                <img
+                  src="/img/collaborators/figma.png"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/collaborators/gdg.png" class="img-fluid" alt="" />
+                <img
+                  src="/img/collaborators/gdg.png"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/collaborators/git.png" class="img-fluid" alt="" />
+                <img
+                  src="/img/collaborators/git.png"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
 
             <div class="col-lg-4 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="/img/collaborators/kubsl.png" class="img-fluid" alt="" />
+                <img
+                  src="/img/collaborators/kubsl.png"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
             </div>
 
@@ -360,11 +383,7 @@ while (true) {
         <div class="container">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12 footer-info">
-              <img
-                src="/img/logo.webp"
-                class="foss-logo"
-                alt="TheEvenet"
-              />
+              <img src="/img/logo.webp" class="foss-logo" alt="TheEvenet" />
             </div>
 
             <div class="col-lg-4 col-md-4 col-sm-12 mt-md-4 footer-contact">
