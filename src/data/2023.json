@@ -16,6 +16,12 @@
       "description": "Experience sharing by Lakisuru Semasinghe.",
       "img": "/img/speakers/2.jpg"
     },
+        {
+      "time": "10:40 AM",
+      "title": "Speech by Mr. Jagath Wickramarathne",
+      "description": "Speech by the lecturer in charge, Mr. Jagath Wickramarathne",
+      "img": "/img/speakers/jagath.jpg"
+    },
     {
       "time": "10:50 AM",
       "title": "2022/23 Resolution",
@@ -23,34 +29,28 @@
       "img": "/img/speakers/nisal.png"
     },
     {
-      "time": "11:00 AM",
-      "title": "Speech by Mr. Jagath Wickramarathne",
-      "description": "Speech by the lecturer in charge, Mr. Jagath Wickramarathne",
-      "img": "/img/speakers/jagath.jpg"
-    },
-    {
       "time": "11:10 AM",
-      "title": "Speech by the President of FCSC",
-      "description": "Speech by the President of FCSC 2023/24, Anujitha Fernando",
-      "img": "/img/speakers/anujitha.jpg"
-    },
-    {
-      "time": "11:20 AM",
       "title": "Speech by SLIIT FOSS President",
       "description": "Speech by the Appointed President for the year 2023/24",
       "img": "/img/speakers/2.jpg"
     },
     {
-      "time": "11:30 AM",
-      "title": "Speech by Mozilla President",
+      "time": "11:20 AM",
+      "title": "Speech by Mozilla Representative",
       "description": "Speech by the the President of Mozilla Campus Club of SLIIT",
       "img": "/img/speakers/2.jpg"
     },
     {
-      "time": "11:40 AM",
+      "time": "11:30 AM",
       "title": "Speech by WIF President",
       "description": "Speech by the the President of SLIIT Women In FOSS Community",
       "img": "/img/speakers/2.jpg"
+    },
+    {
+      "time": "11:40 AM",
+      "title": "Speech by the President of FCSC",
+      "description": "Speech by the President of FCSC 2023/24, Anujitha Fernando",
+      "img": "/img/speakers/anujitha.jpg"
     },
     {
       "time": "11:50 AM",
