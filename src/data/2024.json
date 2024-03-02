@@ -1,5 +1,5 @@
 {
-  "year": "2023",
+  "year": "2024/2025",
   "hashTag": "#04032024",
   "venue": "On Campus, Lecture Hall F603",
   "date": "4th March 2024",
@@ -13,25 +13,25 @@
     {
       "time": "10:35 AM",
       "title": "Experience Sharing",
-      "description": "Experience sharing by Lakisuru Semasinghe.",
-      "img": "/img/speakers/2.jpg"
+      "description": "Experience sharing by Akalanka Perera.",
+      "img": "/img/speakers/akalanka.jpg"
     },
         {
       "time": "10:40 AM",
-      "title": "Speech by Mr. Jagath Wickramarathne",
-      "description": "Speech by the lecturer in charge, Mr. Jagath Wickramarathne",
-      "img": "/img/speakers/jagath.jpg"
+      "title": "Speech by Dr. Nuwan Kodagoda",
+      "description": "Speech by the Dean of Faculty of Computing, Dr. Nuwan Kodagoda",
+      "img": "/img/speakers/nuwan.jpg"
     },
     {
       "time": "10:50 AM",
-      "title": "2022/23 Resolution",
-      "description": "Presenting the resolution by Nisal Renuja and appointing the President for year 2023/24",
-      "img": "/img/speakers/nisal.png"
+      "title": "2023/24 Resolution",
+      "description": "Presenting the resolution by Miyuru Gunarathna and appointing the President for year 2024/25",
+      "img": "/img/speakers/miyuru.jpeg"
     },
     {
       "time": "11:10 AM",
       "title": "Speech by SLIIT FOSS President",
-      "description": "Speech by the Appointed President for the year 2023/24",
+      "description": "Speech by the Appointed President for the year 2024/25",
       "img": "/img/speakers/2.jpg"
     },
     {
@@ -49,8 +49,8 @@
     {
       "time": "11:40 AM",
       "title": "Speech by the President of FCSC",
-      "description": "Speech by the President of FCSC 2023/24, Anujitha Fernando",
-      "img": "/img/speakers/anujitha.jpg"
+      "description": "Speech by the President of FCSC 2024/25, Rivi Abishek",
+      "img": "/img/speakers/abhishek.jpg"
     },
     {
       "time": "11:50 AM",
