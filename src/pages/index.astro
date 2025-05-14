@@ -1,474 +1,116 @@
 ---
-let currentYear = new Date().getFullYear();
-let data = null;
-while (true) {
-  try {
-    data = await import(`../data/${currentYear}.json`);
-    break;
-  } catch (e) {
-    currentYear--;
-    continue;
-  }
-}
+import Layout from "@/layouts/Layout.astro";
+import EventCard from "@/components/EventCard.astro";
+import { AgendaData } from "@/data/AgendaData";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/500.css";
+import "@fontsource/dm-sans/600.css";
+
+// Use regular image paths instead of the Image component
+// import { Image } from "astro:assets";
+
+// Define font classes based on theme
+const fontClass = "font-dm-sans"; // For regular text
+const titleFont = "font-clash-display"; // For headers and titles
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>SLIIT FOSS - AGM</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+<style>
+  /* CSS for Clash Display font */
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('/fonts/ClashDisplay-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-style: normal;
+  }
+  
+  .bg-paper {
+    background-image: url('/img/paper-texture.png');
+    background-color: #000000;
+    background-blend-mode: overlay;
+    background-size: cover;
+  }
+  
+  .box-with-shadow {
+    box-shadow: 5px 5px 0px 0px rgba(255,255,255,1);
+    border: 1px solid white;
+  }
+</style>
 
-    <link href="/img/favicon.ico" type="image/svg+xml" rel="icon" />
-    <link href="/img/favicon.ico" type="image/svg+xml" rel="apple-touch-icon" />
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800"
-      rel="stylesheet"
-    />
-
-    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-
-    <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="/lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="/lib/venobox/venobox.css" rel="stylesheet" />
-    <link
-      href="/lib/owlcarousel/assets/owl.carousel.min.css"
-      rel="stylesheet"
-    />
-    <link href="/css/style.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <header id="header">
-      <div class="container">
-        <div id="logo" class="pull-left">
-          <a href="#intro" class="scrollto"
-            ><img src="/img/logo.webp" alt="" title="" /></a
-          >
-        </div>
-      </div>
-    </header>
-
-    <section id="intro">
-      <div class="intro-container wow fadeIn">
-        <h1 class="mb-4 pb-0">
-          The Annual <span>General</span> Meeting <br />
-          <span class="agm-heading">{data.year}</span>
-          <br />
-          SLIIT <span>FOSS</span>
-        </h1>
-        <p class="mb-4 pb-0">{data.date}, On Campus</p>
-        <p class="mb-4 pb-0">
-          <span style="color: #0096FF">#sliitfossagm</span>
-          {data.hashTag}
-        </p>
-        {
-          data.recap && (
-            <a
-              href={data.recap}
-              class="venobox play-btn mb-4"
-              data-vbtype="video"
-              data-autoplay="true"
-            />
-          )
-        }
-        {
-          data.liveStream && (
-            <a href="#youtube" class="about-btn scrollto">
-              Watch Live Stream
-            </a>
-          )
-        }
-      </div>
-    </section>
-
-    <main id="main">
-      <section id="about">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 text-center">
-              <h2>About The Event</h2>
-              <p>
-                The Annual General Meeting of the SLIIT FOSS community is an
-                annual event created to review an year of hard work and to pass
-                on the torch of leadership to newer members of the community.
-              </p>
-            </div>
-            <div class="col-lg-3 text-center">
-              <h3>Where</h3>
-              <p>{data.venue}</p>
-            </div>
-            <div class="col-lg-3 text-center">
-              <h3>When</h3>
-              <p>{data.date}</p>
-            </div>
+<Layout title="FOSS AGM 2025">
+  <main class="relative bg-black sm:pt-10">
+    <div class="overflow-clip relative max-w-[500px] sm:max-w-[540px] mx-auto pb-10 px-4 sm:px-8 bg-black sm:border-[1px] border-gray-300 sm:rounded-lg bg-paper pt-10 sm:pt-10">
+        
+        <div class="text-left">
+          <div class={`${titleFont} space-y-1 mb-2 text-white leading-tight text-[65px] sm:text-[75px] font-[700]`}>
+            AGM<span class="text-[40px]">-2025</span>
           </div>
-        </div>
-      </section>
+          
+          <div class="box-with-shadow bg-theme-white inline-block px-4 py-1 mb-8">
+            <p class={`${titleFont} text-white text-[18px] font-semibold`}>
+              for 2025 FOSS
+            </p>
+          </div>
+          
+          <div>
+            <p class={`${titleFont} mb-5 text-white leading-tight text-[28px] font-[600]`}>
+              Event Outline
+            </p>
 
-      <section id="schedule" class="section-with-bg">
-        <div class="section-header">
-          <h2>Agenda</h2>
-          <p>Here is our agenda for the event</p>
-        </div>
-
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="container wow fadeInUp">
-                <div class="tab-content row justify-content-center">
-                  <!-- Schdule Day 1 -->
-                  <div
-                    role="tabpanel"
-                    class="col-lg-12 tab-pane fade show active"
-                    id="day-1"
-                  >
-                    {
-                      data.agenda.map((agenda) => {
-                        return (
-                          <div class="row schedule-item">
-                            <div class="col-md-2">
-                              <time>{agenda.time}</time>
-                            </div>
-                            <div class="col-md-10">
-                              <div class="speaker">
-                                <img src={agenda.img} />
-                              </div>
-                              <h4>{agenda.title}</h4>
-                              <p>{agenda.description}</p>
-                            </div>
-                          </div>
-                        );
-                      })
-                    }
-                  </div>
-                  <p class="mt-3 fs-6 text-black-50">
-                    Agenda is subject to change*
-                  </p>
+            <div class="flex flex-col gap-2">
+              <div class="flex flex-row flex-wrap gap-2">
+                <div class="px-3 py-1 border-2 border-black-background rounded-full bg-white text-black font-[500]">
+                  1 PM – 4 PM
+                </div>
+                <div class="px-3 py-1 border-2 border-black-background rounded-full bg-gradient-to-r from-[#4591FF] to-[#D4E4FA] text-black font-[500]">
+                  13 February
+                </div>
+              </div>
+              <div class="flex flex-row flex-wrap gap-2 w-full">
+                <div class=" px-3 py-1 border-2 border-black-background rounded-full bg-gradient-to-r from-[#FFDD00] to-[#F6F9C1] text-black font-[500]">
+                  Main Auditorium
                 </div>
               </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-12" style="text-align: center">
-              <br />
-              <br />
-              <img
-                width="300"
-                height="300"
-                src="/img/meet.png"
-                class="wow fadeInUp"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="gallery"
-        class="wow fadeInUp py-3 mt-5"
-        style="padding: 0px; margin: 0px;"
-      >
-        <div class="container">
-          <div class="section-header">
-            <h2>SLIIT FOSS Arsenal Updates</h2>
-            <p>Check out our most recent additions to the community</p>
           </div>
         </div>
 
         <div
-          class="owl-carousel gallery-carousel card shadow p-4"
-          style="margin-right: 20vw !important;"
-        >
-          {
-            Array.from({ length: data.arsenalImgCount }).map((_, i) => (
-              <a
-                href={`/img/${currentYear}/arsenal/${i + 1}.jpg`}
-                target="_blank"
-              >
-                <img src={`/img/${currentYear}/arsenal/${i + 1}.jpg`} alt="" />
-              </a>
-            ))
-          }
+          class={`${fontClass} flex flex-row justify-center mt-6 mb-6`}></div>
+
+        <div class="flex flex-col gap-y-4 text-white">
+          {AgendaData.map((event, index) => (
+            <EventCard
+              title={event.title}
+              time={event.time}
+              imageURL={event.imageURL}
+              name={event.name}
+              position={event.position}
+              index={index}
+              isLast={index === AgendaData.length - 1}
+            />
+          ))}
         </div>
-      </section>
+      </div>
 
-      <section id="gallery" class="wow fadeInUp">
-        <div class="container">
-          <div class="section-header">
-            <h2>Gallery</h2>
-            <p>Check out our gallery of past events</p>
-          </div>
+      {/* <div class="relative bg-[#13131391]"></div> */}
+      <div class=" relative bg-[#13131391]">
+        <div class="max-w-[500px] py-5 mx-auto flex flex-row items-center justify-center px-[150px] ">
+          <img
+            src="/img/logo.webp"
+            width="80"
+            height="80"
+            alt=""
+            class="mr-4 transition-all duration-300 ease-in-out"
+          />
+          <div class="w-[1px] h-10 bg-white"></div>
+          <img
+            src="/img/collaborators/git.png"
+            width="80"
+            height="80"
+            alt=""
+            class="mr-4 transition-all duration-300 ease-in-out"
+          />
         </div>
-
-        <div class="owl-carousel gallery-carousel">
-          {
-            Array.from({ length: data.eventImgCount }).map((_, i) => (
-              <a
-                href={`/img/${currentYear}/events/${i + 1}.jpg`}
-                class="venobox"
-                data-gall="gallery-carousel"
-              >
-                <img src={`/img/${currentYear}/events/${i + 1}.jpg`} alt="" />
-              </a>
-            ))
-          }
-        </div>
-      </section>
-
-      <section id="supporters" class="section-with-bg wow fadeInUp">
-        <div class="container">
-          <div class="section-header">
-            <h2>Collaborations</h2>
-          </div>
-
-          <div class="row no-gutters supporters-wrap clearfix">
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img
-                  src="/img/collaborators/devops.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img
-                  src="/img/collaborators/figma.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img
-                  src="/img/collaborators/gdg.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img
-                  src="/img/collaborators/git.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img
-                  src="/img/collaborators/kubsl.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="/img/collaborators/ng.png" class="img-fluid" alt="" />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="/img/collaborators/go.png" class="img-fluid" alt="" />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img
-                  src="/img/collaborators/postman.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img
-                  src="/img/collaborators/stackoverflow.png"
-                  class="img-fluid"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="section-bg wow fadeInUp">
-        <div class="container">
-          <div class="section-header">
-            <h2>Feedback</h2>
-            <p>Your feedback helps us grow and become better.</p>
-          </div>
-
-          <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form id="feedback-form">
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-control"
-                    id="name"
-                    placeholder="Your Name"
-                    data-rule="minlen:4"
-                    data-msg="Please enter at least 4 chars"
-                  />
-                  <div class="validation"></div>
-                </div>
-                <div class="form-group col-md-6">
-                  <input
-                    type="email"
-                    class="form-control"
-                    name="email"
-                    id="email"
-                    placeholder="Your Email"
-                    data-rule="email"
-                    data-msg="Please enter a valid email"
-                  />
-                  <div class="validation"></div>
-                </div>
-              </div>
-              <div class="form-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  name="subject"
-                  id="subject"
-                  placeholder="Subject"
-                  data-rule="minlen:4"
-                  data-msg="Please enter at least 8 chars of subject"
-                />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  name="message"
-                  rows="5"
-                  data-rule="required"
-                  data-msg="Please write something for us"
-                  placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div class="text-center">
-                <button type="submit">Send Message</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
+      </div>
     </main>
-
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-12 footer-info">
-              <img src="/img/logo.webp" class="foss-logo" alt="TheEvenet" />
-            </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-12 mt-md-4 footer-contact">
-              <p>
-                Welcome to the SLIIT FOSS community. We're a group of volunteers
-                who believe in the usage of Free/Open Source Software (FOSS)
-              </p>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 mt-md-4 footer-links">
-              <div class="social-links">
-                <a
-                  href="https://twitter.com/fosssliit?lang=en"
-                  class="twitter"
-                  target="_blank"><i class="fa fa-twitter"></i></a
-                >
-                <a
-                  href="https://www.facebook.com/sliitfoss"
-                  class="facebook"
-                  target="_blank"><i class="fa fa-facebook"></i></a
-                >
-                <a
-                  href="https://www.instagram.com/sliitfoss"
-                  class="instagram"
-                  target="_blank"><i class="fa fa-instagram"></i></a
-                >
-                <a
-                  href="https://www.youtube.com/channel/UCPPO-QR0Dv13ewjhPsc_I3w/featured"
-                  class="youtube"
-                  target="_blank"><i class="fa fa-youtube"></i></a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong>SLIIT FOSS</strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-          Designed by
-          <a href="https://sliitfoss.org" target="_blank">
-            SLIIT FOSS Community</a
-          >
-        </div>
-      </div>
-    </footer>
-
-    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
-
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init("user_WyMiG19mwb6vTGJwqJq5C");
-      })();
-    </script>
-    <script type="text/javascript">
-      window.onload = function () {
-        document
-          .getElementById("feedback-form")
-          .addEventListener("submit", function (event) {
-            event.preventDefault();
-            emailjs.sendForm(
-              "service_664o6wc",
-              "template_1nhqybf",
-              this,
-              "user_WyMiG19mwb6vTGJwqJq5C"
-            );
-          });
-      };
-    </script>
-    <script is:inline src="/lib/jquery/jquery.min.js"></script>
-    <script is:inline src="/lib/jquery/jquery-migrate.min.js"></script>
-    <script is:inline src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script is:inline src="/lib/easing/easing.min.js"></script>
-    <script is:inline src="/lib/superfish/hoverIntent.js"></script>
-    <script is:inline src="/lib/superfish/superfish.min.js"></script>
-    <script is:inline src="/lib/wow/wow.min.js"></script>
-    <script is:inline src="/lib/venobox/venobox.min.js"></script>
-    <script is:inline src="/lib/owlcarousel/owl.carousel.min.js"></script>
-    <script is:inline src="/js/main.js"></script>
-    <script is:inline src="/js/contact.js"></script>
-  </body>
-</html>
+</Layout>
