@@ -2,7 +2,7 @@ export const AgendaData = [
   {
     title: "Welcome Speech",
     time: "1:00 PM",
-    imageURL: "/img/speakers/janukshan.png",
+    imageURL: "/img/speakers/Janukshan.png",
     name: "Janukshan Sivakumar",
     position: "",
   },
@@ -37,21 +37,21 @@ export const AgendaData = [
   {
     title: "Speech by SLIIT FOSS President 2025/26",
     time: "2:05 PM",
-    imageURL: "/img/speakers/sayuru.png",
+    imageURL: "/img/speakers/Sayuru.jpeg",
     name: "Sayuru Bopitiya",
     position: "President, SLIIT FOSS 2025/26",
   },
   {
     title: "Speech by Mozilla President",
     time: "2:20 PM",
-    imageURL: "/img/speakers/sadeesha.png",
+    imageURL: "/img/speakers/Sadeesha Perera.jpg",
     name: "Sadeesha Perera",
     position: "President, Mozilla 2025/26",
   },
   {
     title: "Speech by WIF President",
     time: "2:35 PM",
-    imageURL: "/img/speakers/irushi.png",
+    imageURL: "/img/speakers/irushigunawardana.jpeg",
     name: "Irushi Gunawardana",
     position: "President, WIF 2025/26",
   },
@@ -65,7 +65,7 @@ export const AgendaData = [
   {
     title: "Vote of Thanks",
     time: "3:05 PM",
-    imageURL: "/img/speakers/irushi.png",
+    imageURL: "/img/speakers/irushigunawardana.jpeg",
     name: "Irushi Gunawardana",
     position: "",
   },
