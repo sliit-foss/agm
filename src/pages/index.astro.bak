@@ -1,0 +1,129 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import EventCard from "@/components/EventCard.astro";
+import { AgendaData } from "@/data/AgendaData";
+import "@fontsource/dm-sans/400.css";
+import "@fontsource/dm-sans/500.css";
+import "@fontsource/dm-sans/600.css";
+
+// Use regular image paths instead of the Image component
+// import { Image } from "astro:assets";
+
+// Define font classes based on theme
+const fontClass = "font-dm-sans"; // For regular text
+const titleFont = "font-clash-display"; // For headers and titles
+---
+
+<style>
+  /* CSS for Clash Display font */
+  @font-face {
+    font-family: 'Clash Display';
+    src: url('/fonts/ClashDisplay-Variable.ttf') format('truetype');
+    font-weight: 200 700;
+    font-style: normal;
+  }
+  
+  .bg-paper {
+    /* background-image: url('/img/paper-texture.png'); */
+    background-color: #ffffff;
+    background-blend-mode: overlay;
+    background-size: cover;
+  }
+  
+  .box-with-shadow {
+    box-shadow: 5px 5px 0px 0px rgba(0,0,0,1);
+    border: 1px solid black;
+  }
+</style>
+
+<Layout title="FOSS AGM 2025">
+  <main class="relative bg-white sm:pt-10">
+    <div class="overflow-clip relative max-w-[500px] sm:max-w-[540px] mx-auto pb-10 px-4 sm:px-8 bg-white sm:border-[1px] border-gray-500 sm:rounded-lg bg-paper pt-10 sm:pt-10">
+        
+        <div class="text-left">
+          <div class="relative mb-2">
+            <div class={`${titleFont} space-y-1 text-black leading-tight text-[55px] sm:text-[65px] font-[700] whitespace-nowrap`}>
+              AGM-2025/26
+            </div>
+            <p class={`${titleFont} absolute bottom-0 right-0 text-black leading-tight text-[18px] font-[500] translate-y-2`}>
+              AGENDA
+            </p>
+          </div>
+          
+          <div class="box-with-shadow bg-theme-white inline-block px-4 py-1 mb-8">
+            <p class={`${titleFont} text-black text-[18px] font-semibold`}>
+              SLIIT FOSS x WIF x Mozilla
+            </p>
+          </div>
+          
+          <div class="mb-5">
+            <p class={`${titleFont} text-black leading-tight text-[28px] font-[600]`}>
+              Event Outline
+            </p>
+
+            <div class="flex flex-col gap-2">
+              <div class="flex flex-row flex-wrap gap-2">
+                <div class="px-3 py-1 border-2 border-gray-400 rounded-full bg-gradient-to-r from-[#4ADE80] to-[#FFFFFF] text-black font-[500]">
+                  2 PM – 5 PM
+                </div>
+                <div class="px-3 py-1 border-2 border-gray-400 rounded-full bg-gradient-to-r from-[#4ADE80] to-[#FFFFFF] text-black font-[500]">
+                  19th May
+                </div>
+              </div>
+              <div class="flex flex-row flex-wrap gap-2 w-full">
+                <div class="px-3 py-1 border-2 border-gray-400 rounded-full bg-gradient-to-r from-[#4ADE80] to-[#FFFFFF] text-black font-[500]">
+                  G604 Lecture Hall, 6F New Building
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class={`${fontClass} flex flex-row justify-center mt-6 mb-6`}></div>
+
+        <div class="flex flex-col gap-y-4 text-black">
+          {AgendaData.map((event, index) => (
+            <EventCard
+              title={event.title}
+              time={event.time}
+              imageURL={event.imageURL}
+              name={event.name}
+              position={event.position}
+              index={index}
+              isLast={index === AgendaData.length - 1}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* <div class="relative bg-[#13131391]"></div> */}
+      <div class="relative bg-gray-100">
+        <div class="max-w-[500px] py-5 mx-auto flex flex-row items-center justify-center px-[150px] ">
+          <img
+            src="/img/logo.png"
+            width="80"
+            height="80"
+            alt=""
+            class="mr-4 transition-all duration-300 ease-in-out"
+          />
+          <div class="w-[1px] h-10 bg-black "></div>
+          <img
+            src="/img/Mozilla Logo-01.png"
+            width="80"
+            height="80"
+            alt=""
+            class="mr-4 transition-all duration-300 ease-in-out"
+          />
+          <div class="w-[1px] h-10 bg-black "></div>
+          <img
+            src="/img/WIF-Dark.png"
+            width="80"
+            height="80"
+            alt=""
+            class="mr-4 transition-all duration-300 ease-in-out"
+          />
+        </div>
+      </div>
+    </main>
+</Layout>
