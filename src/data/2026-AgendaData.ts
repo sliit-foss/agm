@@ -76,7 +76,7 @@ export const AgendaData = [
     title: "Vote of Thanks",
     time: "11:25 AM",
     imageURL: "/img/speakers/asath.jpg",
-    name: "Asath",
+    name: "Asath Mohomad",
     position: "Vice President, SLIIT FOSS Community 2026/27",
   },
 ];
