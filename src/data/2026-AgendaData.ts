@@ -2,21 +2,21 @@ export const AgendaData = [
   {
     title: "Welcome Speech",
     time: "9:30 AM",
-    imageURL: "/faces/sayuni.jpg",
+    imageURL: "/img/speakers/sayuni.jpg",
     name: "Sayuni Bulathgama",
     position: "Secretary, Women in FOSS",
   },
   {
     title: "Speech by Prof. Nuwan Kodagoda",
     time: "9:35 AM",
-    imageURL: "/faces/nuwan-kodagoda.jpg",
+    imageURL: "/img/speakers/nuwan-kodagoda.jpg",
     name: "Prof. Nuwan Kodagoda",
     position: "Pro Vice Chancellor",
   },
   {
     title: "Speech by Mr. Jagath Wickramarathne",
     time: "9:45 AM",
-    imageURL: "/faces/jagath-wickramarathne.jpg",
+    imageURL: "/img/speakers/jagath-wickramarathne.jpg",
     name: "Mr. Jagath Wickramarathne",
     position: "Academic Coordinator & Senior Lecturer",
   },
@@ -24,7 +24,7 @@ export const AgendaData = [
     title:
       "Presentation of Resolution and Appointment of the President of SLIIT FOSS Community for 2026/27",
     time: "9:55 AM",
-    imageURL: "/faces/sayuru-bopitiya.jpg",
+    imageURL: "/img/speakers/sayuru-bopitiya.jpg",
     name: "Sayuru Bopitiya",
     position: "Past President, SLIIT FOSS Community 2025/26",
   },
