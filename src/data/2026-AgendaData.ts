@@ -1,6 +1,6 @@
 export const AgendaData = [
   {
-    title: "Welcome Speech",
+    title: "Welcome Speech by the Secretary of Women in FOSS (WIF) for 2026/27",
     time: "9:30 AM",
     imageURL: "/img/speakers/sayuni.jpeg",
     name: "Sayuni Bulathgama",
