@@ -4,7 +4,7 @@ export const AgendaData = [
     time: "9:30 AM",
     imageURL: "/img/speakers/sayuni.jpeg",
     name: "Sayuni Bulathgama",
-    position: "Secretary, Women in FOSS",
+    position: "Secretary, Women in FOSS (WIF) 2026/27",
   },
   {
     title: "Speech by Prof. Nuwan Kodagoda",
@@ -21,8 +21,7 @@ export const AgendaData = [
     position: "Academic Coordinator & Senior Lecturer",
   },
   {
-    title:
-      "Presentation of Resolution and Appointment of the President of SLIIT FOSS Community for 2026/27",
+    title: "Presentation of Resolution of SLIIT FOSS Community for 2026/27",
     time: "9:55 AM",
     imageURL: "/img/speakers/Sayuru.jpeg",
     name: "Sayuru Bopitiya",
@@ -36,8 +35,7 @@ export const AgendaData = [
     position: "President, SLIIT FOSS Community 2026/27",
   },
   {
-    title:
-      "Presentation of Resolution and Appointment of the President of Mozilla Club of SLIIT for 2026/27",
+    title: "Presentation of Resolution of Mozilla Club of SLIIT for 2026/27",
     time: "10:20 AM",
     imageURL: "/img/speakers/Sadeesha Perera.jpg",
     name: "Sadeesha Perera",
@@ -51,8 +49,7 @@ export const AgendaData = [
     position: "President, Mozilla Club of SLIIT 2026/27",
   },
   {
-    title:
-      "Presentation of Resolution and Appointment of the President of Women in FOSS (WIF) for 2026/27",
+    title: "Presentation of Resolution of Women in FOSS (WIF) for 2026/27",
     time: "10:45 AM",
     imageURL: "/img/speakers/irushigunawardana.jpeg",
     name: "Irushi Gunawardhana",
