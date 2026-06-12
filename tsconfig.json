@@ -1,3 +1,16 @@
 {
-  "extends": "astro/tsconfigs/base"
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@public/*": ["./public/*"],
+      "@styles/*": ["./src/styles/*"]
+    }
+  },
+  "include": ["src/**/*", "astro.config.ts", "tsup.config.ts"],
+  "exclude": ["node_modules", "dist", "out"]
 }
