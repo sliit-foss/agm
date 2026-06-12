@@ -65,8 +65,8 @@ export const AgendaData = [
   {
     title: "Speech by the President of FCSC 2026/27",
     time: "11:10 AM",
-    imageURL: "/img/speakers/anjula-dabare.jpg",
-    name: "Anjula Dabarera",
+    imageURL: "/img/speakers/ruwaneka-pathirage.png",
+    name: "Ruwaneke Pathirage",
     position: "President, FCSC 2026/27",
   },
   {
