@@ -36,33 +36,36 @@ interface Props {
       <p class="font-dm-sans text-sm">{Astro.props.description}</p>
     </div>
     <div class="flex items-center">
-      {Astro.props.imageURL && (
-        <div
-          class={`overflow-x-clip relative min-w-[70px] w-[70px] h-[70px] border-[2px] border-[black] rounded-full ${
-            [
-              "bg-gradient-to-r from-[#F571EA] to-[#F8D4FA]",
-              "bg-gradient-to-r from-[#48FF57] to-[#D1FAD4]",
-              "bg-gradient-to-r from-[#4591FF] to-[#D4E4FA]",
-              "bg-gradient-to-r from-[#FFDD00] to-[#F6F9C1]",
-            ][Astro.props.index % 4]
-          }`}
-        >
-          <img
-            src={Astro.props.imageURL}
-            width="100"
-            height="100"
-            alt="profile"
-            class="object-cover absolute top-0 left-0 w-full h-full rounded-full  brightness-105"
-          />
-        </div>
-      )}          <div class="ml-4 flex flex-col">
-            <p class="font-dm-sans text-[18px] font-[500] text-black">
-              {Astro.props.name}
-            </p>
-            <p class="font-dm-sans text-[15px] font-[100] -mt-[1px] text-gray-700">
-              {Astro.props.position}
-            </p>
+      {
+        Astro.props.imageURL && (
+          <div
+            class={`overflow-x-clip relative min-w-[70px] w-[70px] h-[70px] border-[2px] border-[#ff7b00] rounded-full ${
+              [
+                "bg-gradient-to-r from-[#F571EA] to-[#F8D4FA]",
+                "bg-gradient-to-r from-[#48FF57] to-[#D1FAD4]",
+                "bg-gradient-to-r from-[#4591FF] to-[#D4E4FA]",
+                "bg-gradient-to-r from-[#FFDD00] to-[#F6F9C1]",
+              ][Astro.props.index % 4]
+            }`}
+          >
+            <img
+              src={Astro.props.imageURL}
+              width="100"
+              height="100"
+              alt="profile"
+              class="object-cover absolute top-0 left-0 w-full h-full rounded-full  brightness-105"
+            />
           </div>
+        )
+      }
+      <div class="ml-4 flex flex-col">
+        <p class="font-dm-sans text-[18px] font-[500] text-black">
+          {Astro.props.name}
+        </p>
+        <p class="font-dm-sans text-[15px] font-[100] -mt-[1px] text-gray-700">
+          {Astro.props.position}
+        </p>
+      </div>
     </div>
   </div>
 </div>
